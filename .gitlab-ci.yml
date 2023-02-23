@@ -1,0 +1,29 @@
+variables:
+  ECR_REGISTRY: 528784489306.dkr.ecr.ap-southeast-1.amazonaws.com
+  REGISRY_NAME: walkability-web-portal
+  AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+  AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+
+stages:
+  - build-publish
+
+build-container:
+  tags:
+    - docker-shell
+  environment:
+    name: build-and-push-container
+  stage: build-publish
+
+  before_script:
+    - docker info
+    - id
+
+  script:
+    - docker build . -f Dockerfile -t $ECR_REGISTRY/$REGISRY_NAME:$CI_COMMIT_BRANCH
+    - aws configure set aws_access_key_id '$AWS_ACCESS_KEY_ID'
+    - aws configure set aws_secret_access_key '$AWS_SECRET_ACCESS_KEY'
+    - aws ecr get-login-password | docker login --username AWS --password-stdin $ECR_REGISTRY
+    - docker push $ECR_REGISTRY/$REGISRY_NAME:$CI_COMMIT_BRANCH
+  only:
+   - master
+   - develop

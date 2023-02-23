@@ -1,0 +1,29 @@
+import inputTypes from '~/constants/form/inputTypes';
+import inputVariants from '~/constants/form/inputVariants';
+
+
+const resetPasswordFields = [
+
+  {
+    className: 'col-12',
+    variant: inputVariants.STANDARD,
+    inputType: inputTypes.PASSWORD,
+    key: 'password',
+    labelText: 'Your Password',
+    rules: { required: true },
+    append: () => <i className='fa fa-eye-slash'></i>,
+  },
+
+  {
+    className: 'col-12',
+    variant: inputVariants.STANDARD,
+    inputType: inputTypes.PASSWORD,
+    key: 'confirmPassword',
+    labelText: 'Re-enter Password',
+    rules: { required: true },
+    append: () => <i className='fa fa-eye-slash'></i>,
+  },
+];
+
+
+export default resetPasswordFields;
