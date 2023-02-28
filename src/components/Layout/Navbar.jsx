@@ -1,10 +1,10 @@
-import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Nav, Navbar } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import NavbarItem from '~/components/Layout/NavbarItem';
 
 function NavbarComponent() {
   return (
-    <Navbar expand="lg" style={{ backgroundColor: '#222222', color: '#F8F8F8' }}>
+    <Navbar expand="lg" style={{ backgroundColor: '#222222', color: '#F8F8F8', height: '10vh' }}>
       <Container>
         <Navbar.Brand href="#home" style={{ color: '#F8F8F8' }}>Walkability</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

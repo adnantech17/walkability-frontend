@@ -1,9 +1,13 @@
-import React from 'react'
+
+import dynamic from 'next/dynamic';
+const MapWithNoSSR = dynamic(() => import('~/components/map/Map'), {
+  ssr: false
+});
 
 const Index = () => {
   return (
-    <div className='container'>
-      <div>index</div>
+    <div>
+      <MapWithNoSSR />
     </div>
   )
 }
