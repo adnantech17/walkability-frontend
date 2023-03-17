@@ -5,7 +5,7 @@
 }
 
 .modal-dialog {
-  width: 20rem;
+  width: 22rem;
 }
 
 .title {
@@ -16,30 +16,49 @@
   text-align: center;
 }
 
-.input-elements {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
+
 
 .form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
   font-size: 12px;
+  $dark-color: #222;
 
   input {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     width: 100%;
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $dark-color;
+    padding: 0;
+    margin-top: 0.2rem;
 
     &:focus,
     &:active {
-      outline: none;
+      outline: transparent;
       border-bottom-width: 2px;
+    }
+  }
+
+  .input-element-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .input-gender {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+
+    div {
+      display: flex;
+      flex-direction: row;
+      gap: 0.3rem;
+
+      input {
+        margin-top: 0;
+      }
     }
   }
 
@@ -51,21 +70,26 @@
 
   .btn-forgot {
     align-self: flex-end;
-    margin-top: -0.5rem;
+    margin-top: -1rem;
   }
 
   .btn-submit {
+    align-self: center;
     font-size: 1rem;
-    margin-top: 1rem;
     width: fit-content;
-    background-color: black;
+    background-color: $dark-color;
     border-radius: 10px;
     color: white;
     padding: 0.5rem 4rem;
   }
 
   .btn-switch-register {
-    margin-top: -1.6rem;
+    margin-top: -1rem;
     text-decoration: underline;
+  }
+
+  // for showing errors
+  span {
+    color: #c90000;
   }
 }
