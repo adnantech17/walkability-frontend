@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css';
-import AuthModal from '~/components/authModals/AuthModal';
+import AuthModal from '~/components/authModal/AuthModal';
 import NavbarComponent from '~/components/Layout/Navbar';
 import { AuthModalProvider } from '~/contexts/AuthModalContext';
 import '~/styles/index.scss';
