@@ -6,7 +6,7 @@ function NavbarComponent() {
   return (
     <Navbar expand="lg" style={{ backgroundColor: '#222222', color: '#F8F8F8', height: '10vh' }}>
       <Container>
-        <Navbar.Brand href="#home" style={{ color: '#F8F8F8' }}>Walkability</Navbar.Brand>
+        <Navbar.Brand href="/" style={{ color: '#F8F8F8' }}>Walkability</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" style={{ color: '#F8F8F8' }}>
           <Nav className="ms-auto">
