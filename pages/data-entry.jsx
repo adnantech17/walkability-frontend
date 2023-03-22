@@ -5,15 +5,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ReactStars from 'react-stars'
 import Container from 'react-bootstrap/Container';
-import Rating from 'react-rating';
 import { Button, FloatingLabel, Stack } from 'react-bootstrap';
+import Multiselect from 'multiselect-react-dropdown';
 const DataEntry = () => {
   const [validated, setValidated] = useState(false);
-  const [name,setName] = useState('')
-  const [roll,setRoll] = useState(0)
-  const [tobstackle,setTObstacke] = useState(-1)
-  const [pobstackle,setPObstacke] = useState(-1)
-  const [form, setForm] = useState()
   const handle = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -27,32 +22,16 @@ const DataEntry = () => {
   const selectHandle = (event) => {
     console.log(event.currentTarget.value)
   }
-  const ratingChange = (e) => {
+  const ratingChange = () => {
     alert('okay')
   }
+  const genderOpions = ['Male', 'Female', 'Other']
   return (
     <>
       <div className='main_div'>
 
         <Container className='main_div' fluid>
           <Form className='form' noValidate validated={validated} onSubmit={handle}>
-            <Row className="justify-content-md-center">
-              <Col className='my_col' md>
-                <FloatingLabel controlId="floatingInputGrid" label="Name">
-                  <Form.Control type="text" placeholder='Your name' required />
-                  <Form.Control.Feedback type='invalid'>Please provide your name</Form.Control.Feedback>
-                </FloatingLabel>
-              </Col>
-              <Col className='my_col' md>
-                <FloatingLabel
-                  controlId="floatingSelectGrid"
-                  label="Roll Number."
-                >
-                  <Form.Control type='number' placeholder="Your roll number" required />
-                  <Form.Control.Feedback type='invalid'>Please provide your roll Number</Form.Control.Feedback>
-                </FloatingLabel>
-              </Col>
-            </Row>
             <Row className="justify-content-md-center">
               <Col className='my_col' md>
                 <FloatingLabel controlId="floatingInputGrid" label="Obstacle Count(Parmanent)">
@@ -91,29 +70,25 @@ const DataEntry = () => {
             </Row>
             <Row className="justify-content-md-center">
               <Col className='my_col' md>
-                <FloatingLabel
-                  controlId="floatingSelectGrid"
-                  label="Safty according to Sex"
-                >
-                  <Form.Control as='select' type='select' multiple>
-                    <option value='1'>Male</option>
-                    <option value='2'>Female</option>
-                    <option value='3'>Other</option>
-                  </Form.Control>
-                </FloatingLabel>
+
+                <Multiselect id='multi'
+                  isObject={false}
+                  hidePlaceholder
+                  placeholder='This road is safe for (Sex)'
+                  options={['Male', 'Female', 'Other']}
+                />
+
+
               </Col>
               <Col className='my_col' md>
-                <FloatingLabel
-                  controlId="floatingSelectGrid"
-                  label="Safty according to Age"
-                >
-                  <Form.Control as='select' type='select' multiple >
-
-                    <option value='1'>5-20</option>
-                    <option value='2'>20-40</option>
-                    <option value='3'>40+</option>
-                  </Form.Control>
-                </FloatingLabel>
+                <Multiselect
+                  id='multi'
+                  isObject={false}
+                  required
+                  hidePlaceholder
+                  placeholder='This road is safe for (Age)'
+                  options={['5-15', '15-30', '30-60', '60+']}
+                />
               </Col>
             </Row>
             <Row className="justify-content-md-center">
@@ -132,12 +107,15 @@ const DataEntry = () => {
               </Col>
             </Row>
             <Row className="justify-content-md-center" id='hh'>
-              <Col sm={2} md>
-                <Stack direction='horizontal'>
-                  <Form.Label>Rating : </Form.Label>
-                  <ReactStars count={5} half={true} onChange={ratingChange} size={30}></ReactStars>
-                </Stack>
+              <Col md>
+                <div className="d-grid gap-2">
+                  <Stack direction='horizontal' id='st'>
+                    <Form.Label>Rating : </Form.Label>
+                    <ReactStars count={5} half={true} onChange={ratingChange} size={30}></ReactStars>
+                  </Stack>
+                </div>
               </Col>
+
             </Row>
             <Row className="justify-content-md-center">
               <Col sm={5}>
