@@ -85,11 +85,11 @@ const Documentation = () => {
         </p>
         {/* <img src="images/cleaniness1.png" alt="image not found " /> */}
 
-        <div class="text-center">
+        <div className="text-center">
           <img src="images/cleanliness1.png" alt="cleaness 1 " />
           <p className="text-center"> Fig: 2.1 Cleanliness 1</p>
         </div>
-        <div class="text-center">
+        <div className="text-center">
           <img
             src="images/cleanliness2.png"
             alt="cleaness 2"
@@ -99,7 +99,7 @@ const Documentation = () => {
 
           <p className="text-center"> Fig: 2.2 Cleanliness 2</p>
         </div>
-        <div class="text-center">
+        <div className="text-center">
           <img
             src="images/cleanliness3.png"
             alt="cleaness 3 "
@@ -108,7 +108,7 @@ const Documentation = () => {
           />
           <p className="text-center"> Fig: 2.3 Cleanliness 3</p>
         </div>
-        <div class="text-center">
+        <div className="text-center">
           <img
             src="images/cleanliness4.png"
             alt="cleaness 4 "
@@ -117,7 +117,7 @@ const Documentation = () => {
           />
           <p className="text-center"> Fig: 2.4 Cleanliness 4</p>
         </div>
-        <div class="text-center">
+        <div className="text-center">
           <img
             src="images/cleanliness5.png"
             alt="cleaness 5"
@@ -161,11 +161,11 @@ const Documentation = () => {
           samples. Note: these are rough samples, but collectors should rate the
           roads that resembles the closest to them.
         </p>
-        <div class="text-center">
+        <div className="text-center">
           <img src="images/congestion1.png" alt="congestion1 " />
           <p className="text-center"> Fig: 2.6 Congestion 1</p>
         </div>
-        <div class="text-center">
+        <div className="text-center">
           <img
             src="images/congestion2.png"
             alt="congestion2 "
@@ -174,7 +174,7 @@ const Documentation = () => {
           />
           <p className="text-center"> Fig: 2.7 Congestion 2</p>
         </div>
-        <div class="text-center">
+        <div className="text-center">
           <img
             src="images/congestion3.png"
             alt="congestion3 "
@@ -183,7 +183,7 @@ const Documentation = () => {
           />
           <p className="text-center"> Fig: 2.8 Congestion 3</p>
         </div>
-        <div class="text-center">
+        <div className="text-center">
           <img
             src="images/congestion4.png"
             alt="congestion4 "
@@ -192,7 +192,7 @@ const Documentation = () => {
           />
           <p className="text-center"> Fig: 2.9 Congestion 4</p>
         </div>
-        <div class="text-center">
+        <div className="text-center">
           <img
             src="images/congestion2.png"
             alt="congestion5 "
@@ -227,7 +227,7 @@ const Documentation = () => {
         </ul>
         <h4 className="mt-4 mb-3"> 2.11 Data Entry Format</h4>
         <p>Copy the following text when entering data:</p>
-        <ul class="list-unstyled">
+        <ul className="list-unstyled">
           <li>Permanent Obstacles:</li>
           <li>Temporary Obstacles:</li>
           <li>Hazards:</li>
