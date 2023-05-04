@@ -11,7 +11,9 @@ function NavbarComponent() {
       style={{ backgroundColor: '#222222', color: '#F8F8F8', height: '10vh' }}
     >
       <Container>
-        <Navbar.Brand href="/" style={{ color: '#F8F8F8' }}>Walkability</Navbar.Brand>
+        <Navbar.Brand href="/" style={{ color: '#F8F8F8' }}>
+          Walkability
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" style={{ color: '#F8F8F8' }}>
           <Nav className="ms-auto">
@@ -19,7 +21,9 @@ function NavbarComponent() {
             <NavbarItem href="documentation" name="Documentation"></NavbarItem>
             <NavbarItem href="data-entry" name="Data Entry"></NavbarItem>
             {/* <NavbarItem href="login" name="Login"></NavbarItem> */}
-            <Button onClick={() => toggleModal()}>Login</Button>
+            <span onClick={() => toggleModal()}>
+              <NavbarItem name="Login"></NavbarItem>
+            </span>
           </Nav>
         </Navbar.Collapse>
       </Container>

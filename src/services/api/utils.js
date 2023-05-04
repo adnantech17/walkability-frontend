@@ -10,3 +10,7 @@ export function convertToFormData(data) {
   }
   return formData
 }
+
+export function formatLatLng(loc) {
+  return loc ? `[${loc.lat.toFixed(6)}, ${loc.lng.toFixed(6)}]` : "Select Location";
+}
