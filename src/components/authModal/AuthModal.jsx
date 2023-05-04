@@ -152,7 +152,6 @@ const Register = ({ toggleAuthType }) => {
   } = useForm({
     resolver: zodResolver(registerSchema),
   });
-  const { toggleModal } = useAuthModal();
 
   const onSubmit = async (data) => {
     console.log(data);

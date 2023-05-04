@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Marker, Popup, useMap, useMapEvents } from 'react-leaflet';
+import { useEffect } from 'react';
+import { Marker, Popup, useMapEvents } from 'react-leaflet';
 
 const myIcon = new L.Icon({
   iconUrl: '/images/marker.png',

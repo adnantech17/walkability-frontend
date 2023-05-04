@@ -1,15 +1,6 @@
 import 'leaflet/dist/leaflet.css';
-import { useEffect, useState } from 'react';
-import { Button, Form, FormControl, InputGroup } from 'react-bootstrap';
-import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import DraggableMarker from '~/components/map/DraggableMarker';
-
-const myIcon = new L.Icon({
-  iconUrl: '/images/marker.png',
-  iconRetinaUrl: '/images/marker.png',
-  popupAnchor: [-0, -0],
-  iconSize: [32, 32],
-});
 
 export function ChangeView({ coords }) {
   const map = useMap();
@@ -19,7 +10,6 @@ export function ChangeView({ coords }) {
 
 export default function Map({ selectedLocation, setSelectedLocation, show }) {
   const geoData = { lat: 23.73499, lng: 90.39083177 };
-
   const center = [geoData.lat, geoData.lng];
 
   return (
