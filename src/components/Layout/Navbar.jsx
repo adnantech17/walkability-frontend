@@ -20,7 +20,12 @@ function NavbarComponent() {
   return (
     <Navbar
       expand="lg"
-      style={{ backgroundColor: '#222222', color: '#F8F8F8', height: '10vh' }}
+      variant="dark"
+      style={{
+        backgroundColor: '#222222',
+        color: '#F8F8F8',
+        minHeight: '10vh',
+      }}
     >
       <Container>
         <Navbar.Brand href="/" style={{ color: '#F8F8F8' }}>
@@ -29,17 +34,25 @@ function NavbarComponent() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" style={{ color: '#F8F8F8' }}>
           <Nav className="ms-auto">
-            <NavbarItem href="about" name="About"></NavbarItem>
-            <NavbarItem href="documentation" name="Documentation"></NavbarItem>
-            <NavbarItem href="data-entry" name="Data Entry"></NavbarItem>
+            <NavbarItem href="about" name="About" className="mt-2"></NavbarItem>
+            <NavbarItem
+              href="documentation"
+              className="mt-2"
+              name="Documentation"
+            ></NavbarItem>
+            <NavbarItem
+              href="data-entry"
+              className="mt-2"
+              name="Data Entry"
+            ></NavbarItem>
             {/* <NavbarItem href="login" name="Login"></NavbarItem> */}
             {userData?.email ? (
               <span onClick={logout}>
-                <NavbarItem name="Logout"></NavbarItem>
+                <NavbarItem name="Logout" className="mt-2"></NavbarItem>
               </span>
             ) : (
               <span onClick={() => toggleModal()}>
-                <NavbarItem name="Login"></NavbarItem>
+                <NavbarItem name="Login" className="mt-2"></NavbarItem>
               </span>
             )}
           </Nav>

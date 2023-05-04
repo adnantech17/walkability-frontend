@@ -1,10 +1,12 @@
-import React from 'react'
-import { Nav } from 'react-bootstrap'
+import React from 'react';
+import { Nav } from 'react-bootstrap';
 
-const NavbarItem = ({ name, href }) => {
+const NavbarItem = ({ name, href, className }) => {
   return (
-    <Nav.Link href={href} className="nav-item">{name}</Nav.Link>
-  )
-}
+    <Nav.Link href={href} className={`nav-item ${className}`}>
+      {name}
+    </Nav.Link>
+  );
+};
 
-export default NavbarItem
+export default NavbarItem;

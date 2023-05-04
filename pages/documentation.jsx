@@ -83,14 +83,19 @@ const Documentation = () => {
           samples. Note: these are rough samples, but collectors should rate the
           roads that resembles the closest to them.
         </p>
-        {/* <img src="images/cleaniness1.png" alt="image not found " /> */}
+        {/* <img className="w-100 h-auto"  src="images/cleaniness1.png" alt="image not found " /> */}
 
         <div className="text-center">
-          <img src="images/cleanliness1.png" alt="cleaness 1 " />
+          <img
+            className="w-100 h-auto"
+            src="images/cleanliness1.png"
+            alt="cleaness 1 "
+          />
           <p className="text-center"> Fig: 2.1 Cleanliness 1</p>
         </div>
         <div className="text-center">
           <img
+            className="w-100 h-auto"
             src="images/cleanliness2.png"
             alt="cleaness 2"
             width="1155"
@@ -101,6 +106,7 @@ const Documentation = () => {
         </div>
         <div className="text-center">
           <img
+            className="w-100 h-auto"
             src="images/cleanliness3.png"
             alt="cleaness 3 "
             width="1150"
@@ -110,6 +116,7 @@ const Documentation = () => {
         </div>
         <div className="text-center">
           <img
+            className="w-100 h-auto"
             src="images/cleanliness4.png"
             alt="cleaness 4 "
             width="1155"
@@ -119,6 +126,7 @@ const Documentation = () => {
         </div>
         <div className="text-center">
           <img
+            className="w-100 h-auto"
             src="images/cleanliness5.png"
             alt="cleaness 5"
             width="1155"
@@ -162,11 +170,16 @@ const Documentation = () => {
           roads that resembles the closest to them.
         </p>
         <div className="text-center">
-          <img src="images/congestion1.png" alt="congestion1 " />
+          <img
+            className="w-100 h-auto"
+            src="images/congestion1.png"
+            alt="congestion1 "
+          />
           <p className="text-center"> Fig: 2.6 Congestion 1</p>
         </div>
         <div className="text-center">
           <img
+            className="w-100 h-auto"
             src="images/congestion2.png"
             alt="congestion2 "
             width="1137"
@@ -176,6 +189,7 @@ const Documentation = () => {
         </div>
         <div className="text-center">
           <img
+            className="w-100 h-auto"
             src="images/congestion3.png"
             alt="congestion3 "
             width="1137"
@@ -185,6 +199,7 @@ const Documentation = () => {
         </div>
         <div className="text-center">
           <img
+            className="w-100 h-auto"
             src="images/congestion4.png"
             alt="congestion4 "
             width="1137"
@@ -194,6 +209,7 @@ const Documentation = () => {
         </div>
         <div className="text-center">
           <img
+            className="w-100 h-auto"
             src="images/congestion2.png"
             alt="congestion5 "
             width="1137"
