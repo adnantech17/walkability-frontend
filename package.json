@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint --max-warnings=0",
     "export": "yarn build && next export",
-    "prepare": "husky install"
+    "prepare": ""
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.11",

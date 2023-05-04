@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { Button, FormControl, InputGroup } from 'react-bootstrap';
-import { formatLatLng } from '~/services/api/utils';
+import { formatLatLng } from '~/utils/formatter';
 const MapWithNoSSR = dynamic(() => import('~/components/map/Map'), {
   ssr: false,
 });

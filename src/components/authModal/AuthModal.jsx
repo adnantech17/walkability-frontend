@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import useAuthModal from '~/hooks/useAuthModal';
 import { useForm } from 'react-hook-form';
@@ -6,6 +6,8 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import styles from './AuthModal.module.scss';
+import { AuthContext } from '~/contexts/AuthContext';
+import { register as registerUser } from '~/services/query/user';
 
 const AuthModal = () => {
   const { showModal, toggleModal } = useAuthModal();
@@ -59,9 +61,19 @@ const Login = ({ toggleAuthType }) => {
     resolver: zodResolver(LoginSchema),
   });
 
-  const onSubmit = (val) => {
-    console.log(val);
+  const { loginToAccount } = useContext(AuthContext);
+  const { toggleModal } = useAuthModal();
+
+  const onSubmit = async (val) => {
+    try {
+      const res = await loginToAccount(val);
+      console.log(res);
+      toggleModal();
+    } catch (err) {
+      console.log(err);
+    }
   };
+
   return (
     <>
       <div className={styles['input-element-group']}>
@@ -95,12 +107,13 @@ const Login = ({ toggleAuthType }) => {
 
 const registerSchema = z
   .object({
+    user_name: z.string({ message: 'Enter your name.' }),
     email: z.string().email({ message: 'Email not valid' }),
     password: z
       .string()
       .min(6, { message: 'Password length must be at least 6' }),
     confirmPassword: z.string(),
-    dob: z
+    date_of_birth: z
       .string()
       .refine(
         (dob) =>
@@ -112,15 +125,15 @@ const registerSchema = z
     gender: z
       .union([
         z.string().nullish(),
-        z.literal('Male'),
-        z.literal('Female'),
-        z.literal('Others'),
+        z.literal('male'),
+        z.literal('female'),
+        z.literal('others'),
       ])
       .refine(
         (gender) => {
           if (!gender) return false;
           return (
-            gender === 'Female' || gender === 'Male' || gender === 'Others'
+            gender === 'female' || gender === 'male' || gender === 'others'
           );
         },
         { message: 'Please provide your gender' }
@@ -139,14 +152,27 @@ const Register = ({ toggleAuthType }) => {
   } = useForm({
     resolver: zodResolver(registerSchema),
   });
+  const { toggleModal } = useAuthModal();
 
-  const onSubmit = (val) => {
-    console.log(val);
+  const onSubmit = async (data) => {
+    console.log(data);
+    try {
+      const res = await registerUser(data);
+      console.log(res);
+      toggleAuthType();
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
     <>
       <div className={styles['input-element-group']}>
+        <div>
+          <label htmlFor={'user_name'}>Name</label>
+          <input type="text" {...register('user_name')}></input>
+          <span>{errors.user_name?.message}</span>
+        </div>
         <div>
           <label htmlFor={'email'}>Email</label>
           <input type="email" {...register('email')}></input>
@@ -163,9 +189,9 @@ const Register = ({ toggleAuthType }) => {
           <span>{errors.confirmPassword?.message}</span>
         </div>
         <div>
-          <label htmlFor="dob">Date of birth</label>
-          <input type="date" {...register('dob')}></input>
-          <span>{errors.dob?.message}</span>
+          <label htmlFor="date_of_birth">Date of birth</label>
+          <input type="date" {...register('date_of_birth')}></input>
+          <span>{errors.date_of_birth?.message}</span>
         </div>
         <div>
           <div className={styles['input-gender']}>
@@ -173,7 +199,7 @@ const Register = ({ toggleAuthType }) => {
             <div>
               <input
                 type="radio"
-                value={'Male'}
+                value={'male'}
                 {...register('gender')}
               ></input>
               <label htmlFor="Male">Male</label>
@@ -181,7 +207,7 @@ const Register = ({ toggleAuthType }) => {
             <div>
               <input
                 type="radio"
-                value={'Female'}
+                value={'female'}
                 {...register('gender')}
               ></input>
               <label htmlFor="Female">Female</label>
@@ -189,7 +215,7 @@ const Register = ({ toggleAuthType }) => {
             <div>
               <input
                 type="radio"
-                value={'Others'}
+                value={'others'}
                 {...register('gender')}
               ></input>
               <label htmlFor="Others">Others</label>
