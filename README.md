@@ -1,4 +1,38 @@
+# About project
+This is the frontend implementation part of Ai based website hata.ai. It displays the walkability of the streets of Dhaka city. It can be used to find the best possible route from one place to another. The users can also add and edit route parameters from their account.
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Landing page
+
+This is the homepage. The users will be able to search for a route in the map in this page. Given a starting and ending point the best walkable path will be presented.
+
+![](https://github.com/adnantech17/walkability-frontend/blob/develop/screenshots/walkability-homepage.png)
+
+
+## Register
+
+Users can register by filling up the register form. Registered users can login to add information about routes.
+
+![](https://github.com/adnantech17/walkability-frontend/blob/develop/screenshots/walkability-signup.png)
+
+
+## Data entry
+
+This screen is a form containing data input for all the necessary parameters to measure walkablity, namely, cleanliness, safety, congestion, obstacle count, footpath width.
+
+![](https://github.com/adnantech17/walkability-frontend/blob/develop/screenshots/walkability-dataentry.png)
+
+
+
+## Documentation page
+
+
+The Documentation screen provides all the details about the standards of collecting data if the user wants to enter data.
+
+
+# ![](https://github.com/adnantech17/walkability-frontend/blob/develop/screenshots/walkability-documentation.png)
 
 ## Getting Started
 
