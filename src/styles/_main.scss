@@ -27,3 +27,54 @@
 .custom-toggler.navbar-toggler {
   border-color: rgb(255, 102, 203);
 }
+
+.text-input-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  position: relative;
+  margin-top: 1.5rem;
+}
+
+.text-input {
+  // border: 1px solid gray;
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 16px;
+  transition: all 0.3s;
+  outline: none;
+}
+
+.text-input-label {
+  position: absolute;
+  left: 8px;
+  top: 10px;
+  transition: all 0.3s;
+  pointer-events: none;
+  font-size: 16px;
+  color: gray;
+}
+
+.text-input-label.shrink {
+  top: -15px;
+  font-size: 12px;
+  color: black;
+  background: white;
+  padding: 4px;
+  border-radius: 6px;
+}
+
+.mobileOnly {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobileOnly {
+    display: block;
+  }
+
+  .desktopOnly {
+    display: none;
+  }
+}
